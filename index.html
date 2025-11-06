@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Algoritmo Genético - Iluminação Inteligente</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+  <h1 class="mb-4">Configuração do Algoritmo Genético</h1>
+  <form id="geneticForm">
+    <div class="mb-3">
+      <label class="form-label">Tamanho da população</label>
+      <input type="number" class="form-control" id="populationSize" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Quantidade de gerações</label>
+      <input type="number" class="form-control" id="generations" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Elitismo total?</label>
+      <select class="form-select" id="elitismTotal">
+        <option value="true">Sim</option>
+        <option value="false">Não</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">% da população sem elitismo (se aplicável)</label>
+      <input type="number" class="form-control" id="elitismRate" value="20">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Tipo de seleção</label>
+      <select class="form-select" id="selectionType">
+        <option value="roleta">Roleta</option>
+        <option value="ranking">Ranking</option>
+        <option value="torneio">Torneio</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Tamanho do torneio (se aplicável)</label>
+      <input type="number" class="form-control" id="tournamentSize" value="3">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Cruzamento</label>
+      <select class="form-select" id="crossoverType">
+        <option value="um">Um ponto</option>
+        <option value="multi">Multiponto</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Quantidade de pontos de cruzamento</label>
+      <input type="number" class="form-control" id="crossoverPoints" value="2">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Taxa de mutação (0 a 1)</label>
+      <input type="number" step="0.01" class="form-control" id="mutationRate" value="0.01">
+    </div>
+    <button type="submit" class="btn btn-primary">Executar</button>
+  </form>
+
+  <div id="output" class="mt-4"></div>
+
+  <script src="genetic.js"></script>
+</body>
+</html>
